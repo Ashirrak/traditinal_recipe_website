@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Catalogue_des_recettes</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+
+    <h1 style="color: rgb(255, 254, 253);margin-left: 42%;margin-top: 20px;font-family: serif; font-size: 40px;">All Products</h1>
+<div class="search" style="margin-top: 40px;">
+<input type="text" name="" id="search" placeholder="search here...." onkeyup="search()" style="width: 400px;height: 50px;">
+<button onclick="searchRecipe()">Search</button> 
+ <button onclick="detailPage()" >View All Recipes</button>
+ <button onclick="pageaccueil()"> Page d'accueil</button>
+</div>
+ <div id="recipe-container"></div>
+
+
+<style>
+	button{
+  background-color:transparent;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  border: 2px solid white;
+  margin-left: 20px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+	.recipe-container {
+		white-space: nowrap;
+		overflow-x: auto;
+		font-size: 0; 
+		
+	}
+
+	.card {
+		display: inline-block;
+		vertical-align: top;
+		width: 350px;
+		margin-right: 16px;
+		font-size: 16px;
+		background-color: rgb(0, 0, 0,.2);
+		border: transparent;
+		
+		padding: 16px;
+		justify-content: space-between;
+		margin-top: 40px;
+		margin-left: 80px;
+	}
+
+	.card img {
+		width:350px;
+		margin-bottom: 16px;
+		margin-top: -15px;
+		
+		margin-left: -15px;
+	}
+
+	.card h2 {
+		margin-bottom: 8px;
+		float: left;
+	}
+
+	.card p {
+		margin-bottom: 16px;
+	}
+
+	.card button {
+		background-color: rgb(219, 121, 30);
+		color: rgb(0, 0, 0);
+		padding: 8px 16px;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+        font-weight: bolder;
+		height: 45px;
+		font-weight: bold;
+		font-size: 15px;
+		float: right;
+	}
+</style>
+<script src="recettesDB01.js"></script>
+</body>
+</html>

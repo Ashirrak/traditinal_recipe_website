@@ -1,0 +1,491 @@
+#background{
+  background: url('Black\ and\ Orange\ Simple\ Food\ YouTube\ Thumbnail.png');
+    height: 728px;
+    background-repeat: no-repeat;
+    
+    background-size: 100px;
+    background-size: 100% 100%;
+    
+    background-position: right;
+    
+  } 
+ 
+  #second{
+
+    background-image: url('Tapa\ de\ aguacate.jpeg');
+   
+
+    height: fit-content;
+    background-repeat: no-repeat;
+    
+    background-size: 100px;
+    background-size: 100% 100%;
+    
+    background-position: right;
+  }
+  #third{
+
+    background-image: url('Tan\ Brown\ &\ Orange\ Fall\ Chef\ Services\ Thanksgiving\ Facebook\ Cover.png');
+   
+   
+    height: 800px;
+    background-repeat: no-repeat;
+    
+    background-size: 100px;
+    background-size: 100% 100%;
+    
+    background-position: right;
+  }
+ .icon{
+
+  background-image: url('Brown\ Modern\ Food\ Vlogger\ YouTube\ Channel\ Art\ .png');
+  height:fit-content;
+   
+    
+    background-repeat: no-repeat;
+    
+    background-size: 100px;
+    background-size: 100% 100%;
+    text-align: center;
+    background-position: right;
+  }
+
+  #id{
+  display:flex;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    justify-content:space-evenly;
+  }
+
+  #id h2{
+
+    border-bottom: 1px solid white;
+  }
+ 
+  
+  #detailpage  , #body{
+    background: url('Black\ and\ Orange\ Simple\ Food\ YouTube\ Thumbnail.png');
+       background-attachment: fixed;
+       background-repeat: no-repeat;
+      
+      background-size: 100px;
+      background-size: 100% 100%;
+      
+      background-position: right;
+      
+    } 
+ a{
+  color: rgb(250, 248, 246);
+  
+  font-size: 20px;
+  display: inline-block;
+  margin: 10px;
+  left: 20px;
+  
+ }
+
+*{
+  font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+a :hover{
+  background-color: rgb(255, 255, 255);
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: rgb(8, 5, 5);
+
+ }
+ a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+ 
+nav{
+  display :flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  padding-left:00% ;
+  position: relative;
+  
+
+}
+
+nav  ul li {
+
+  list-style-type: none;
+  display: inline-block;
+  padding: 0px 15px 0 5px;
+  justify-content: center;
+  font-weight: bolder;
+ }
+
+ header{
+  
+  top: 0%;
+  left: 0%;
+  padding: 20px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: 0.5s;
+ }
+
+ header nav li a:hover{
+  color: #e0966b;
+  border-bottom: 2px solid  #c97b54;
+  scroll-behavior: smooth;
+  transition: 0.2s;
+}
+#search {
+  
+  align-items: center;
+  justify-content: space-between;
+  font-family: serif;
+  font-size: large;
+  color: #f7f7f7;
+  background-color: transparent;
+  
+  width: 100px;
+  height: 30px;
+  background: transparent;
+  justify-content: center;
+  font-weight: bolder;
+  
+  
+ 
+}
+
+#input::placeholder {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 100px) {
+  #input {
+    border-radius: 20px;
+  }
+}
+
+#input {
+  width: 200px;
+   margin-left: 42%;
+  
+  padding: 8px;
+  border: none;
+  
+  font-size: 16px;
+  border:1px solid #7f8579;
+  color: #f1eaea;
+  justify-content: center;
+  background-color:transparent;
+  box-shadow: 0px 2px 4px rgba(32, 27, 27, 0.1);
+}
+
+#input::placeholder {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 600px) {
+  #input {
+    border-radius: 20px;
+  }
+}
+img{
+
+  
+  height: 250px;
+  width: 250px;
+  border:1px solid #ffffff;
+  margin-left:00%;
+  margin-top: 23px;
+
+}
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+  
+  
+   h1 {
+    color: black-color;
+    font-weight: 400;
+   }
+   p {
+    font-size: 0.9rem;
+   }
+
+    h2 {
+     margin-bottom: 5px;
+     font-size: 1rem;
+     font-weight: 10px;
+     color: #000000;
+    }
+    p {
+     color: black-color;
+     font-weight: bold;
+     font-size: 1.2rem;
+    }
+   h2 h1 p{
+
+    border: 1px solid  rgb(165, 163, 161);
+
+   }
+
+#social-fb:hover {
+  color: #3B5998;
+}
+#social-tw:hover {
+  color: #4099FF;
+}
+#social-gp:hover {
+  color: #d34836;
+}
+#social-em:hover {
+  color: #f39c12;
+}
+#footer{
+
+
+float: inline-end;
+margin-top: -100px;
+}
+  /*style of detail page*/
+#detaildiv{
+
+    height:fit-content;
+    width : 91%;
+    background: rgb(255, 255, 255,.2);
+    background-color: rgb(255, 255, 255,.2);
+    color: rgb(10, 8, 8);
+    justify-content: space-between;
+    margin-left: 60px;
+    border-radius: 2%;
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+  
+ }
+
+
+
+.search
+{
+
+padding: 10px 0px;
+justify-content: space-between;
+}
+.search h1
+{
+letter-spacing: 3px;
+
+
+}
+
+.search input
+{
+
+padding: 5px 16px;
+background: transparent;
+border: 1px solid #ebe2e2;
+font-size: 20px;
+text-transform: capitalize;
+letter-spacing: 3px;
+outline: none;
+margin-left: 20%;
+}
+.search input::placeholder
+{
+color: rgb(222, 233, 222);
+text-align: center;
+font-weight: 500;
+
+}
+
+
+
+#find{
+
+  color: #f7f7f7;
+  font-family: serif;
+}
+
+
+#p1 ,#h1 ,h2, p, h1,h3{
+  color: #f7f7f7;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .card img {
+
+
+      height: 300px;
+      width: 450px;
+      
+    }
+    .card p{
+
+      font-size: 15px;
+    }
+    .card h2 {
+      font-size: 15px;
+    }
+    .contenu h2 , p {
+      font-size: 15px;
+    }
+
+    #detail .card h2 {
+
+      font-size: 15px;
+    }
+    #detail .card p {
+
+      font-size: 15px;
+    }
+    .recipes{
+
+
+      float: none;
+      display:contents;
+    }
+   #background  {
+    width:fit-content;
+   }
+   #second{
+    height: fit-content;
+    width:fit-content;
+   }
+   #second .card img {
+      height: 200px;
+      width: 400px;
+      float: left;
+    }
+    #second .card button {
+      float: right;
+    }
+  #second .card{
+    justify-content: center;
+    text-align: center;
+    
+  }
+    #third{
+     width: fit-content;
+     height: fit-content;
+    }
+   .icon{
+    background-image: url('Brown\ Modern\ Food\ Vlogger\ YouTube\ Channel\ Art\ .png');
+    height:fit-content;
+   width:fit-content;
+   
+   }
+
+  }
+
+
+  @media screen and (max-width: 700px) {
+    .card img {
+
+
+      height: 200px;
+      width: 250px;
+      
+    }
+    body{
+
+      font-size: small;
+    }
+    .card p{
+
+      font-size: 15px;
+    }
+    .card h2 {
+      font-size: 15px;
+    }
+    .contenu h2 , p {
+      font-size: 15px;
+    }
+    .card{
+      height: fit-content;
+      width: fit-content;
+    }
+
+    #detail .card h2 {
+
+      font-size: 15px;
+    }
+    #detail .card p {
+
+      font-size: 15px;
+    }
+   
+   #background  {
+    width:700px;
+    height: 700px;
+   }
+   #second{
+    height: fit-content;
+    width:700px;
+   }
+   #second .card img {
+      height: 100px;
+      width: 100px;
+      float: left;
+    }
+    #second .card button {
+      float:right;
+    }
+  .btn1 a{
+      font-size: 10px;
+     
+    }
+  #second .card{
+    justify-content: center;
+    text-align: center;
+    
+  }
+  #second .card {
+    height: 100px;
+    text-align: left;
+    
+
+  }
+    #third{
+     width: 700px;
+     height: fit-content;
+    }
+   .icon{
+    background-image: url('Brown\ Modern\ Food\ Vlogger\ YouTube\ Channel\ Art\ .png');
+    height:fit-content;
+   width:700px;
+   background-repeat: no-repeat;
+   }
+
+  }
+
+  
+.recipes{
+   
+  display:flexbox;
+  text-align: center;
+  justify-content: center;
+  color: white;
+ 
+
+}
+.recipes button{
+  
+ 
+  
+  height: 40px;
+  width: 55px;
+  font-size: 13px;
+  text-align: center;
+  padding:0px;
+  margin: 12px;
+}
+  

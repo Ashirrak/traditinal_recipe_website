@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+  <div id="background">
+  <header>
+          <div id="container">
+    
+        <nav>
+        <ul>
+          <a style="padding-right: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size:30px;"><h1><em style="color: #f77f00;">A</em>shira<em style="color: #f77f00;">k</em></h1></a>
+            <li><a style="font-family: serif;"href="#aboutus">À propos</a></li>
+            <li><a style="font-family: serif;"href="#social-fb">Contact us</a></li>
+            <li><a style="font-family: serif;" href="#categories">Catégories</a></li>
+            <li><a style="font-family: serif;"href="#Recettes">Recettes</a></li>
+            <li><a style="font-family: serif;"href="http://127.0.0.1:5500/detail.html">Details de Recettes</a></li>
+            <li><a style="font-family: serif;"href="http://127.0.0.1:5500/catalogue_des_recettes.html">Search a Recipe</a></li>
+          </ul>
+        </nav>   
+          </div>
+          
+  </header>
+    
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <section class="banniere" id="banniere">
+        <div class="contenu">
+          <div style="border-left: 3px solid white; padding-left: 20px;">
+            <h2 style="font-size: 55px;">Que Des Plats Délicieux</h2>
+            <p>Empty stomach</p>
+            <p>  Does not bring happy life</p>
+            <p>Full stomach</p>
+            <p>  can bring happy life</p>
+          </div>
+            <a href="#" class="btn1">Notre Menu</a>
+            <a href="#" class="btn2">Reservation</a>
+        </div>
+    </section>
+
+  </div>
+        <div id="second">
+         <hr>
+         <h1 style="text-align: center; font-size: 60px;font-weight:bolder ;padding-top: 20px;color: #da8d28;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" id="Recettes">R<em style="color:rgb(255, 255, 255)">ecipes</em></h1>
+         <br><br>
+         <div id="recipe-container1"></div>
+         <a href="http://127.0.0.1:5500/catalogue_des_recettes.html" class="btn3">View more recipes</a>
+        </div>
+
+    <style>
+.btn1{
+    font-size: 1em;
+    color: #fff;
+    background: #fb911f;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn2{
+    font-size: 1em;
+    color: #fff;
+    background: #2a4963;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn3{
+  
+    font-size: 1em;
+    color: #fff;
+    background: #fb911f;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+    margin-left: 575px;
+    margin-top: 50px; 
+    height: 60px;
+    padding: 10px 15px 15px 15px;
+}
+      .recipe-container1 {
+        white-space: nowrap;
+        overflow-x: auto;
+        font-size: 0; 
+        position: relative;
+      }
+    
+      .card {
+        display:inline-block;
+        vertical-align: top;
+        width: 380px ;
+        height:fit-content;
+        margin-right: 0px;
+        font-size: 16px;
+        background-color:rgba(0, 0, 0, 0.2);
+        border: transparent;
+        justify-content: center;
+        text-align: center;
+        padding: 16spx;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-left:60px;
+        position: relative;
+      }
+    
+      .card img {
+        width: 380px;
+        margin-top: 0px;
+        border: transparent;
+       
+        height: 250px;
+      }
+    
+      .card h2 {
+        margin-top: 10px;
+        color: rgb(252, 249, 249);
+        font-size: 20px;
+        font-family: serif;
+        
+        
+      }
+    
+      .card p {
+        margin-bottom: 16px;
+        color: rgb(255, 255, 255);
+      }
+    
+      .card button {
+        background-color:  #fb911f;
+        color: rgb(0, 0, 0);
+        padding: 10px 16px;
+        margin-top: 40px;
+        
+        border: none;
+        
+        
+        cursor: pointer;
+        font-weight: bolder;
+      }
+
+      .banniere{
+    position: relative;
+    width: 100%;
+    min-height: 98vh;
+    display: flex;
+    justify-content:left;
+    align-items:normal;
+    background-size: cover;
+    }
+
+    .banniere .contenu{
+        max-width: 70%;
+        text-align: center;
+        margin-top: 30px;
+       
+        
+    }
+    .banniere .contenu h2{
+        color: #fff;
+        font-size: 3em;
+        text-transform: capitalize;
+        font-family: serif;
+        font-size: 30px;
+
+    }
+    .contenu p{
+        color: #ffff;
+        font-size: 1.2em;
+        font-size: 30px;
+    }
+
+    section{
+    padding: 100px;
+}
+#myBtn {
+    font-size: 1em;
+    font-weight: bolder;
+    border-color: transparent;
+    color: #fff;
+    background:  #f77f00;
+    padding: 10px 20px;
+    
+    margin-top: 480px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    transition: 0.5s;
+    margin-left: 50px;
+    position: fixed;
+  
+}
+
+
+    </style>
+    <div  id="third">
+      <hr>
+   <section>
+      <br id="aboutus">
+     <h1 style="font-size: 40px;" >Tasty Traditional Arab Food You Must Try</h1>
+   <br>
+   
+     <p>Arab countries are famous for their delicious dishes. In fact, traditional Arab food isn’t the same; it differs from country to country. It is also considered as a tourist attraction. Tourists from all around the world come to enjoy the yummy taste. 
+      </p>
+      <br><br>
+      <h1 style="font-size: 40px;">Our Team : </h1><br>
+       <p>  We have an entire team of geniuses behind us at Pinch of Yum who are experts in a little bit of everything – from customer service, to social media, to videography, to assisting with recipe shoots. They are EVERYTHING.
+        
+        Our team helps keep it all running smoothly.
+        </p>
+        <br>
+        
+        <div class="user-details">
+          <h1 style="font-size: 40px;">Join <a style="padding-right: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size:30px;"><h1><em style="color: #f77f00;">A</em>shira<em style="color: #f77f00;">k</em> Community</h1></a></h1><br>
+          <div class="input-box">
+            <h2>Username</h2>
+            <input id="inpt" type="text" placeholder="    Enter your username" required>
+          </div><br>
+          <div class="input-box">
+            <h2>Email</h2>
+            <input id="inpt" type="text" placeholder="    Enter your email" required>
+            
+          </div><br>
+          <button class="btn">Submit</button>
+        </div>
+
+
+        <style>
+   input{
+    background-color: transparent;
+    height: 30px;
+    border-color:rgb(255, 255, 255);
+    color: azure;
+   }
+  
+   .user-details{
+
+    text-align: center;
+
+   }
+ .btn{
+  font-size: 1em;
+    color: #fff;
+    background: #fb911f;
+    padding: 10px 20px;
+    display: inline-block;
+    border-color: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.5s;
+   
+ }
+  #inpt::placeholder{
+    color: #ffffff;
+  }
+ 
+        </style>
+
+    </section>
+  </div>
+ 
+ 
+   
+      <div  class="icon">
+        <br><br><br><br><br>
+       <h1>Write for Us</h1> <br>
+        <p>  <em style="color: #f77f00;">A</em>shira<em style="color: #f77f00;">k </em>is always on the lookout for talented new writers, 
+          recipe developers, equipment reviewers, and photographers who love cooking to join our team of contributors.
+          </p>
+          <br><br>
+        <h1 style="font-weight: bolder;">Contact us on : </h1> 
+        <br><br><br>     
+                 <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                 <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                 <a  href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                 <a href="https://gmail.com/"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+    <hr>
+    <br><br>
+   <div id="id" >
+                 <ol >
+                  <h2>Links</a></h2>
+                  <ul style="list-style: none;">
+                    <li><a style="font-family: serif;font-size: 20px;"href="#aboutus">À propos</a></li>
+                    <li><a style="font-family: serif;font-size: 20px;"href="#social-fb">Contact us</a></li>
+                    <li><a style="font-family: serif;font-size: 20px;" href="#categories">Catégories</a></li>
+                    <li><a style="font-family: serif;font-size: 20px;"href="#Recettes">Recettes</a></li>
+                    <li><a style="font-family: serif;font-size: 20px;"href="http://127.0.0.1:5500/detail.html">Details de Recettes</a></li>
+                    <li><a style="font-family: serif;"href="http://127.0.0.1:5500/catalogue_des_recettes.html">Search a Recipe</a></li>
+                </ul>
+                 </ol>
+    <hr>
+                 <ol >
+                  <h2>Our Recipes</h2>
+                  <ul><a  style="font-size: 17px;margin: 2px;" href="http://127.0.0.1:5500/detail.html?recette=1">Foul Modammas </a></ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=2">Mansaf</a></ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=3">Makaroni bel Bechamel </a></ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=4">Kabsa au poulet </a></ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=5">Makloubeh</a> </ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=6">Couscous aux légumes</a> </ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=7">Tajine de poulet aux olives</a></ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=8">Chorba Frik</a> </ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=9">Koushari</a></ul>
+                  <ul><a  style="font-size: 17px;margin: 2px;"" href="http://127.0.0.1:5500/detail.html?recette=10">Köfte</a></ul>
+                 </ol>
+     <hr>            
+                 <ol>
+                  <h2>Our teams</h2>
+                  <ul>Bader Najeeb</ul>
+                  <ul>Gregoire Berger</ul>
+                  <ul>Joudie Kalla</ul>
+                  <ul>Mirette Aly</ul>
+                  <ul>Ahmad Tawil</ul>
+                 </ol>
+  </div>
+<br><br>
+</div>
+
+   <script src="recettesDB01.js"></script>
+   <script>
+
+
+    // Get the recipe container element
+var recipecontainer1 = document.getElementById("recipe-container1");
+const after = document.getElementById("after");
+
+// Shuffle the recipes array
+var shuffledRecettesDB = recettesDB.sort(() => Math.random() - 0.5);
+
+// Loop through the shuffled recipes array and create recipe cards
+for (var i = 0; i < 10; i++) {
+  // Create a new recipe card element
+  var card = document.createElement("div");
+  card.classList.add("card");
+
+  // Create a new image element for the recipe
+  var image = document.createElement("img");
+  image.src = shuffledRecettesDB[i].image;
+  image.style.float="buttom";
+  card.appendChild(image);
+
+  // Create a new title element for the recipe
+  var nam = document.createElement("h2");
+  nam.textContent = shuffledRecettesDB[i].name;
+  card.appendChild(nam);
+
+  var  duration = document.createElement("p");
+  duration.textContent = shuffledRecettesDB[i].duration
+  card.appendChild(duration);
+
+  var country = document.createElement("p");
+  country.textContent = shuffledRecettesDB[i].country;
+  card.appendChild(country);
+
+  var Catégories= document.createElement("p");
+  Catégories.textContent = shuffledRecettesDB[i].category;
+  card.appendChild(Catégories);
+  // Create a new button element for the recipe
+  var button = document.createElement("button");
+  button.textContent ="View_Recipe"
+  card.appendChild(button);
+  
+  
+  card.style.textAlign="center";
+  button.addEventListener("click",function(){
+      window.location.href ="http://127.0.0.1:5500/detail.html";
+    });
+  // Append the recipe card to the container element
+  recipecontainer1.appendChild(card);
+}
+   
+
+  recipecontainer1.insertAdjacentElement('afterend',after);
+
+  
+      // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+
+    </script>
+</body>
+</html>

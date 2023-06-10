@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title> 
+    <link rel="stylesheet" href="style.css"> 
+      
+      
+    
+</head>
+<body id="detailpage" style="font-family: serif;">
+  
+  
+  <h1 style="text-align: center; font-size: 60px;font-weight:bolder ;padding-top: 20px;color: #da8d28;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"" id="Recettes"><em style="color:rgb(255, 255, 255)">All </em>R<em style="color:rgb(255, 255, 255)">ecipes</em></h1>
+  <br><br>
+   <div  class="recipes">
+
+    <button onclick="returnPage1()">Page:01</button>   
+    <button onclick="returnPage()">Page:02</button>
+    <button onclick="detailPage()">Page:03</button>
+    <button onclick="recipe01()">recipe01</button>
+    <button onclick="recipe02()">recipe02</button>
+    <button onclick="recipe03()">recipe03</button>
+    <button onclick="recipe04()">recipe04</button>
+    <button onclick="recipe05()">recipe05</button>
+    <button onclick="recipe06()">recipe06</button>
+    <button onclick="recipe07()">recipe07</button>
+    <button onclick="recipe08()">recipe08</button>
+    <button onclick="recipe09()">recipe09</button>
+    <button onclick="recipe10()">recipe10</button>
+ <br><br>
+
+  </div><div id="detail"></div>
+  <br><br>
+</body>   
+       
+      <script src="recettesDB01.js"></script>
+
+
+      <script>
+                        //IP of my machine change this to ur ip to be able to run this code
+                   let link= "http://127.0.0.1:5500/"
+                   /************************/
+
+        function returnPage(){
+          location.href= link+"catalogue_des_recettes.html";
+          console.log(location.href);
+        }
+        function returnPage1(){
+          location.href=link+"Page%20d'accueil.html";
+        }
+
+        //construire detail page
+          
+        if( window.location.href ==link+"detail.html"){   
+          function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 0; i < 10; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+                  var duration = document.createElement("p");
+          duration.textContent = "Duration : " + recettesDB[i].duration;
+          card.appendChild(duration);
+
+               var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+              
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+
+            Ingredients.style.fontWeight="bolder";
+            Ingredients.style.marginTop="30px";
+            Ingredients.style.marginBottom="30px";
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            Instruction.style.fontWeight="bolder";
+            Instruction.style.marginTop="100px";
+            Instruction.style.marginBottom="30px";
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+            
+             
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+ recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+   displayRecipes(recettesDB);
+   }
+        
+       
+             
+            
+                 
+      
+          if( window.location.href == link+"detail.html?recette=1"){   
+            function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 0; i < 1; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+               var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+            
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+             
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+ recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+   displayRecipes(recettesDB);
+   }
+     
+              if( window.location.href ==link+"detail.html?recette=2"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 1; i < 2; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+              var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+ recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+              displayRecipes(recettesDB);
+              }
+            
+              
+              if( window.location.href ==link+"detail.html?recette=3"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 2; i < 3; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+                 var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+           
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+ recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+  if( window.location.href ==link+"detail.html?recette=4"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 3; i < 4; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+                 var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+           
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+ recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+  if( window.location.href ==link+"detail.html?recette=5"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 4; i < 5; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+                var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+            
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+ recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+  if( window.location.href ==link+"detail.html?recette=6"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 5; i < 6; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+               var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+             
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+  recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+  if( window.location.href ==link+"detail.html?recette=7"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 6; i < 7; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+
+            var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+              
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+            
+            
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent =  recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+  recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+
+  if( window.location.href ==link+"detail.html?recette=8"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 7; i < 8; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+              
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+
+
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+
+            
+              var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent =  recettesDB[i].comments[0].user + " : "+  recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+  recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+
+
+  if( window.location.href ==link+"detail.html?recette=9"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 8; i < 9; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+              
+            var rating= document.createElement("p");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + "- " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+            
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+
+           
+              
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent = recettesDB[i].comments[0].user + " : "+  recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+  recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+
+
+
+  if( window.location.href ==link+"detail.html?recette=10"){   
+                function displayRecipes(recettesDB) {
+          detail.innerHTML = "";
+          for (var i = 9; i < 10; i++) {
+            // Create a new recipe card element
+            var card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create a new image element for the recipe
+            var image = document.createElement("img");
+            image.src = recettesDB[i].image;
+            image.style.float="right";
+            image.style.borderRadius="2%"
+            card.appendChild(image);
+            
+            // Create a new title element for the recipe
+            var nam = document.createElement("h2");
+            nam.textContent =recettesDB[i].name;
+            nam.style.fontSize="50px";
+            card.appendChild(nam);
+
+            // Create a new description element for the recipe
+            var country = document.createElement("p");
+            country.textContent = recettesDB[i].country;
+            card.appendChild(country);
+              
+            var rating= document.createElement("h2");
+            rating.textContent =  "Rating" + " : " +  (  recettesDB[i].comments[0].rating + recettesDB[i].comments[1].rating  ) /2;
+            card.appendChild(rating);
+              
+            var Ingredients = document.createElement("h1");
+            Ingredients.textContent = "Ingredients";
+            card.appendChild(Ingredients);
+            for(let j=0; j<=recettesDB[i].ingredients.length;j++)
+            { 
+            var ingredients = document.createElement("h2");
+            ingredients.textContent = recettesDB[i].ingredients[j];
+            card.appendChild(ingredients);
+            }
+            var Instruction = document.createElement("h1");
+            Instruction.textContent = "Instruction";
+            card.appendChild(Instruction);
+
+
+            Instruction.style.marginBottom="20px";
+            Instruction.style.marginTop="100px";
+            Ingredients.style.marginBottom="20px";
+            Ingredients.style.marginTop="20px";
+
+            
+            for(let j=0; j<recettesDB[i].instructions.length;j++)
+            { 
+
+            var instruction= document.createElement("p");
+            instruction.textContent = j + " - " + recettesDB[i].instructions[j];
+            card.appendChild(instruction);
+            }
+             
+            
+            var comments= document.createElement("h1");
+            comments.textContent = "Comments : " ;
+            card.appendChild(comments);
+            comments.style.fontWeight ="bolder";
+            comments.style.marginTop="10px";
+            comments.style.marginBottom="15px";
+
+            var comment1= document.createElement("h2");
+            comment1.textContent =   recettesDB[i].comments[0].user + " : "+ recettesDB[i].comments[0].content;
+            card.appendChild(comment1);
+
+            var comment2= document.createElement("h2");
+            comment2.textContent = recettesDB[i].comments[1].user + " : "+  recettesDB[i].comments[1].content;
+            card.appendChild(comment2);
+            
+            
+            // Append the recipe card to the container element
+            detail.appendChild(card);
+          }
+          
+          
+        } 
+  displayRecipes(recettesDB);
+  }
+</script>
+    
+<style>
+  	button{
+      margin-top: 11px;
+      background-color:transparent;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      border: 2px solid white;
+      margin-left: 30px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+	.recipe-container {
+		white-space: nowrap;
+		overflow-x: auto;
+		font-size: 0; 
+		
+	}
+
+	.card {
+		
+		vertical-align: top;
+		width: 100%;
+		
+		font-size: 16px;
+		background-color: rgb(0, 0, 0,.2);
+		border: transparent;
+		border-radius: 4px;
+		padding: 16px;
+		justify-content: space-between;
+		margin-top: 30px;
+		
+    text-align: center;
+    float: right;
+	}
+
+	.card img {
+		max-width: 100%;
+		margin-bottom: 16px;
+	}
+  img{
+    height: 500px;
+    width: 700px;
+  }
+
+	.card h2 {
+		margin-bottom: 8px;
+	}
+
+	.card p {
+		margin-bottom: 16px;
+	}
+
+</style>
+</html>
